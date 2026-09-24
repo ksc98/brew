@@ -20,7 +20,7 @@ class Sandbox
   PRIVILEGED_GROUPS = %w[admin staff root wheel].freeze
 
   # Home-relative credential paths needed by Git downloads.
-  GIT_CREDENTIAL_PATHS = %w[.ssh .gitconfig .git-credentials .config/gh .netrc].freeze
+  GIT_CREDENTIAL_PATHS = %w[.ssh .gitconfig .git-credentials .config/gh .netrc Library/Keychains].freeze
   private_constant :GIT_CREDENTIAL_PATHS
 
   # A read-only descriptor identifies Homebrew's sandbox across exec, without trusting ENV.
@@ -507,7 +507,6 @@ class Sandbox
         "Movies",
         "Music",
         "Pictures",
-        "Library/Keychains",
         "Library/Mobile Documents",
         "Library/CloudStorage",
         "Dropbox",
