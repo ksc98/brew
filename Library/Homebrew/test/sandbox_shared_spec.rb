@@ -793,6 +793,7 @@ RSpec.describe Sandbox do
         home/".pip",
         home/".ssh",
         home/"Documents",
+        home/"Library/Keychains",
       ]
       sensitive_files = [
         home/".bash_login",
@@ -838,7 +839,7 @@ RSpec.describe Sandbox do
     end
 
     it "blocks sensitive paths when Git credentials are excepted" do
-      %w[.ssh .aws .config/gh].each { |path| (home/path).mkpath }
+      %w[.ssh .aws .config/gh Library/Keychains].each { |path| (home/path).mkpath }
 
       sandbox.deny_read_home(except: :git)
 
